@@ -33,11 +33,12 @@
 
 (defparameter *diff-list-last* 'last)
 
-;(defparameter *lex-rule-suffix* "_INFL_RULE"
+;;; "_INFL_RULE" changed to "" as suffix for irregs.tab file
+(defparameter *lex-rule-suffix* "")
 ; "creates the inflectional rule name from the information
 ;  in irregs.tab - for PAGE compatability")
 
-;(defparameter *irregular-forms-only-p* t)
+(defparameter *irregular-forms-only-p* t)
 
 ;;;
 ;;; input characters to be ignored (i.e. suppressed) in tokenization

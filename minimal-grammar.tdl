@@ -24,6 +24,14 @@ basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.MC #mc,
 basic-head-mod-phrase-simple :+ [ SYNSEM.LOCAL.CAT.MC #mc,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
 
+perfective := aspect.
+
+present := tense.
+
+past := tense.
+
+future := tense.
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Types
 ;;;;;;;;;;;;;;;;;;;
@@ -67,6 +75,8 @@ transitive-verb-lex := verb-lex & transitive-lex-item &
                                  COMPS < > ],
                            HEAD noun ] ] > ].
 
+auxiliary-verb-lex := transitive-verb-lex.
+
 verb1-verb-lex := intransitive-verb-lex.
 
 verb2-verb-lex := transitive-verb-lex.
@@ -76,6 +86,9 @@ verb2-verb-lex := transitive-verb-lex.
 ;;;;;;;;;;;;;;;;;;;
 
 ;;; Lexical rule types
+
+past-participle-lex-rule := infl-add-only-no-ccont-lex-rule &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Phrasal Types
@@ -94,3 +107,8 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 
 bare-np-phrase := basic-bare-np-phrase &
   [ C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
+
+auxiliary-verb-phrase := head-final &
+  [ HEAD-DTR.ARG-ST.FIRST #first,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ #first,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].

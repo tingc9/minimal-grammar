@@ -9,6 +9,22 @@ n2 := noun2-noun-lex &
   [ STEM < "n2" >,
     SYNSEM.LKEYS.KEYREL.PRED "_n2_n_rel" ].
 
+abraham-lex := noun1-noun-lex &
+  [ STEM < "abraham" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_abraham_pn_rel" ].
+
+kim-lex := noun-lex &
+  [ STEM < "kim" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_kim_pn_rel" ].
+
+morning-lex := noun-lex &
+  [ STEM < "morning" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_morning_n_rel" ].
+
+mistake-lex := noun-lex &
+  [ STEM < "mistake" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mistake_n_rel" ].
+
 ;;; Verbs
 
 iv := verb1-verb-lex &
@@ -18,3 +34,11 @@ iv := verb1-verb-lex &
 tv := verb2-verb-lex &
   [ STEM < "tv" >,
     SYNSEM.LKEYS.KEYREL.PRED "_tv_v_rel" ].
+
+kill := verb2-verb-lex &
+  [ STEM < "kill" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_kill_v_rel" ].
+
+be-aux := auxiliary-verb-lex &
+  [ STEM < "be" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_vaux_rel" ].
