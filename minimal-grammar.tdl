@@ -104,8 +104,10 @@ past-participle-lex-rule := infl-add-only-no-ccont-lex-rule &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
 
 
-transitive-comp-delete-rule := local-change-only-lex-rule & verb-lex &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS <> ].
+transitive-comp-delete-rule := local-change-only-lex-rule & 
+  [ DTR transitive-verb-lex,
+    DTR.SYNSEM.LOCAL.CAT.HEAD verb,
+    SYNSEM.LOCAL.CAT.VAL.COMPS <> ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Phrasal Types
@@ -128,3 +130,5 @@ bare-np-phrase := basic-bare-np-phrase &
 auxiliary-verb-phrase := head-final & 
 [ SYNSEM.LOCAL.CAT.HEAD verb,
   HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS <> ].
+
+
