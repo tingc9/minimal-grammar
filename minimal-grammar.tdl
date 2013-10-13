@@ -117,4 +117,6 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 bare-np-phrase := basic-bare-np-phrase &
   [ C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
 
-auxiliary-verb-phrase := head-final.
+auxiliary-verb-phrase := head-final & 
+[ SYNSEM.LOCAL.CAT.HEAD verb,
+  HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS <> ].
