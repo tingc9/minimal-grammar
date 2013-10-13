@@ -75,12 +75,16 @@ transitive-verb-lex := verb-lex & transitive-lex-item &
                                  COMPS < > ],
                            HEAD noun ] ] > ].
 
+
+
 ;;; Subject Raising Verb Lexeme. 
-sr-verb-lex := verb-lex &
+sr-verb-lex := verb-lex & 
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ #subj,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.AGR #agr,
+    SYNSEM.LOCAL.AGR #agr,
     ARG-ST < [LOCAL.CAT.HEAD noun], 
-            #comps & [ SYNSEM.LOCAL.CAT.VAL.SUBJ #subj,
+            #comps & [ SYNSEM.LOCAL.CAT.VAL.SUBJ #subj ,
                        SYNSEM.LOCAL.CAT.VAL.COMPS <> ] >
   ].
 
@@ -98,6 +102,10 @@ verb2-verb-lex := transitive-verb-lex.
 
 past-participle-lex-rule := infl-add-only-no-ccont-lex-rule &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT perfective ].
+
+
+transitive-comp-delete-rule := local-change-only-lex-rule & verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS <> ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Phrasal Types
