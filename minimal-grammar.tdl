@@ -75,7 +75,15 @@ transitive-verb-lex := verb-lex & transitive-lex-item &
                                  COMPS < > ],
                            HEAD noun ] ] > ].
 
-auxiliary-verb-lex := transitive-verb-lex.
+;;; Subject Raising Verb Lexeme. 
+sr-verb-lex := verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ #subj,
+    ARG-ST < [LOCAL.CAT.HEAD noun], 
+            #comps & [ SYNSEM.LOCAL.CAT.VAL.SUBJ #subj ] >
+  ].
+
+auxiliary-verb-lex := sr-verb-lex.
 
 verb1-verb-lex := intransitive-verb-lex.
 
