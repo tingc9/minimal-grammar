@@ -80,7 +80,8 @@ sr-verb-lex := verb-lex &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ #subj,
     ARG-ST < [LOCAL.CAT.HEAD noun], 
-            #comps & [ SYNSEM.LOCAL.CAT.VAL.SUBJ #subj ] >
+            #comps & [ SYNSEM.LOCAL.CAT.VAL.SUBJ #subj,
+                       SYNSEM.LOCAL.CAT.VAL.COMPS <> ] >
   ].
 
 auxiliary-verb-lex := sr-verb-lex.
@@ -116,7 +117,4 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 bare-np-phrase := basic-bare-np-phrase &
   [ C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
 
-auxiliary-verb-phrase := head-final &
-  [ HEAD-DTR.ARG-ST.FIRST #first,
-    SYNSEM.LOCAL.CAT.VAL.SUBJ #first,
-    HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+auxiliary-verb-phrase := head-final.
