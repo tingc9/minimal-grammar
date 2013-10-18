@@ -24,6 +24,10 @@ basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.MC #mc,
 basic-head-mod-phrase-simple :+ [ SYNSEM.LOCAL.CAT.MC #mc,
     NON-HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
 
+; proxy norm-lex-item to make changes later
+; norm-lex-item not in matrix.tdl
+norm-lex-item := norm-ltop-lex-item.
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Types
 ;;;;;;;;;;;;;;;;;;;
@@ -74,7 +78,7 @@ verb2-verb-lex := transitive-verb-lex.
 
 ;;; Determiners
  
-det-word := norm-ltop-lex-item & word.
+det-word := norm-lex-item & word.
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
