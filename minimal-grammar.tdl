@@ -71,6 +71,11 @@ verb1-verb-lex := intransitive-verb-lex.
 
 verb2-verb-lex := transitive-verb-lex.
 
+
+;;; Determiners
+ 
+det-word := norm-ltop-lex-item & word.
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;
