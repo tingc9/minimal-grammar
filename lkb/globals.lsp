@@ -33,7 +33,7 @@
 
 (defparameter *diff-list-last* 'last)
 
-;(defparameter *lex-rule-suffix* "_INFL_RULE"
+(defparameter *lex-rule-suffix* "")
 ; "creates the inflectional rule name from the information
 ;  in irregs.tab - for PAGE compatability")
 

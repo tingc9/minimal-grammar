@@ -1,20 +1,45 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;; Nouns
 
-n1 := noun1-noun-lex &
+n1 := noun-lex &
   [ STEM < "n1" >,
     SYNSEM.LKEYS.KEYREL.PRED "_n1_n_rel" ].
 
-n2 := noun2-noun-lex &
+n2 := noun-lex &
   [ STEM < "n2" >,
     SYNSEM.LKEYS.KEYREL.PRED "_n2_n_rel" ].
 
+apple-lex := noun-lex &
+  [ STEM < "apple" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_apple_n_rel"].
+
+;;; Pronouns
+
+; taking I as base stem is completely arbitrary
+; ? interesting to know how PRED changes to reflect pointer to speaker
+n-pron := pronoun-lex &
+  [ STEM < "i" >,
+    SYNSEM [ LKEYS.KEYREL.PRED "_n-pron_n_rel",
+             LOCAL.CONT.HOOK.INDEX.PNG [ PERSON 1st,
+                                         NUMBER singular ] ] ].
+
+;;; Determiners
+
+; adding determiner a
+a-lex := det-word &
+  [ SYNSEM.LOCAL.CONT.RELS <! def-relation !>].
+
 ;;; Verbs
 
-iv := verb1-verb-lex &
+iv := intransitive-verb-lex &
   [ STEM < "iv" >,
     SYNSEM.LKEYS.KEYREL.PRED "_iv_v_rel" ].
 
-tv := verb2-verb-lex &
+tv := transitive-verb-lex &
   [ STEM < "tv" >,
     SYNSEM.LKEYS.KEYREL.PRED "_tv_v_rel" ].
+
+; adding eat verb
+eat-lex := transitive-verb-lex &
+  [ STEM 	< "eat" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].

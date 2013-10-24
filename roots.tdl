@@ -6,7 +6,8 @@
 ; symbols, but they all need to be listed as the value of
 ; `*start-symbol' (see `lkb/user-fns.lsp').
 
-root := phrase &
+; parse individual phrases as well
+root := word-or-lexrule & phrase &
   [ SYNSEM.LOCAL [ COORD -,
                    CAT [ VAL [ SUBJ < >,
                                COMPS < > ],
